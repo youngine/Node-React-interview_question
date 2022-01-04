@@ -13,7 +13,11 @@
 * React
 ```
 component단위작성, virtual dom, 렌더링
+- React는 뷰의 변경을 virtual dom에서 처리하여 성능을 높이기때문에, 변경이 많은 뷰를 구성해야하는 사이트에 적합하다고 판단
+- 또한 클라이언트 사이드 렌더링으로 첫 로딩만 기다리면, 동적으로 빠르게 렌더링이 되기 때문에 좋은 사용자 경험(UX)을 위해 사용
 ```
+
+
 - Node.js
 ```
 Node.js는 비동기식 이벤트 중심 모델을 사용하므로 데이터 집약적인 어플리케이션에 적합합니다.
@@ -30,4 +34,9 @@ Node.js를 사용하면 확장 가능한 네트워크 프로그램을 쉽게 구
 ### 🗝 1/3일 STUDY KEYWORD
 ```
 jsx,component, dom, 라이브러리/프레임워크, angular, vue
+```
+
+### 🗝 1/4일 STUDY KEYWORD
+```
+npm ,webpack ,Node.js ,스레드, noSQL
 ```
