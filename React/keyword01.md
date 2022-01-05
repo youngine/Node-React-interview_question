@@ -117,98 +117,154 @@ DOM 자체는 빠르지만 요소의 개수가 수 백 개, 수 천 개로 늘�
 <br>
 
 
-# 리액트/노드
 
 # 정리
 
----
+# react
 
-- react
-    
-    `jsx,component, dom, 라이브러리/프레임워크, angular, vue`
-    
-    ## 라이브러리, 프레임워크 차이
-    
-    ### 라이브러리
-    
-    - 단순 활용이 가능한 도구들의 집합
-    - 소프트웨어 개발할 때 컴퓨터 프로그램이 사용하는 비휘발성 자원
-    - 미리 작성된 코드, 변수, 함수, 클래스 등 포함
-    - 개발자가 필요할 때 호출하여 사용
-    
-    ### 프레임워크
-    
-    - 뼈대니 기반구조
-    - 소프트웨어의 특정 문제를 해결하기 위해서 상호 협력하는 클래스와 인터페이스의 집합
-    - 개발을 수월하게 하기 위해 소프트웨어의 구체적인 기능들에 해당하는 부분의 설계와 구현을 재사용 가능하도록 협업화된 형태로 제공하는 소프트웨어 환경
-    - 개발 시 필수적인 코드, 알고리즘, 데이터베이스 연동 등과 같은 기능를 위해 어느정도 뼈대 제공
-    - 제어의 역전 ( 프레임 워크 위에 개발한 클래스를 등록해두고, 프레임워크가 흐름을 주도하는 중에 개발자가 만든 애플리케이션 코드를 사용하도록 만드는 방식 )
-    
-    ### 라이브러리와 프레임워크 차이
-    
-    - flow에 대한 제한 권한이 어디에 있느냐의 차이
-    - 프레임워크 - 전체적인 흐름을 자체적으로 가지고 있으며, 프로그래머가 그 안에 필요한 코드 작성
-    - 라이브러리 - 사용자가 흐름에 대한 제어를 하여 필요한 상황에 가져다 쓰는 것
-    
-    ## react, angular, vue 차이
-    
-    ### React
-    
-    - 라이브러리
-    - 페이스북 개발자가 개발, 페이스북에서 유지 보수
-    - [Virtual Dom](https://www.youtube.com/watch?v=BYbgopx44vo) 지원
-    - SSR - [Next.js](https://nextjs.org/)
-    - [JSX](https://ko.reactjs.org/docs/introducing-jsx.html) (JavaScritp + XML)
-    - [React Native](https://reactnative.dev/) (앱 개발까지 가능)
-    - 라이브러리이지만 컴포넌트를 사용한다면, 프레임워크처럼 규칙을 지켜야함
-    - 장점 - [Virtual Dom](https://ko.reactjs.org/docs/faq-internals.html) ⇒ Dom 트리를 추상화하여 자바스크립트 객체로 만들어 두고 변경되는 부분은 virtual dom에서 처리하여 성능을 높힘
-        - virtual DOM(변경된 부분 처리) ————→ real DOM(virtual DOM에서 받으거랑 비교 했을 때 달라지 부분만 변경, 안달라졌으면 변경 X) / 유튜브보고 정리한거 더 자세히 공부해봐야함
-    - SPA(Single Page Application) 방식으로 진행한다면 검색엔진 노출(SEO : Search Engine Optimization)에 관련된 문제를 생각 했을 때 SSR을 염두해 둘 수 밖에 없었는데 Next.js를 사용하여 해결 가능
-    - UI를 구성하는 개별적인 뷰 단위인 컴포넌트 단위로 작성하여 생산성과 유지보수에 좋음
-    - JSX(자바스크립트 확장 문법)을 사용하여 컴포넌트를 생성 가능
-    
-    ### Angular
-    
-    - 타입스크립트 기반 오픈소스 프레임워크
-    - 구글 앵귤러팀 개발, 구글에서 유지보수
-    - 양방향 바인딩 지원
-    - TypeScript 기반
-    - [RxJs](https://github.com/ReactiveX/rxjs) (Reactive Extensions For JavaScript) : 스트림을 통한 비동기 처리 방식 지원
-    - 가장 체계적이고 잘 정리되어있는 문서와 튜토리얼
-    - 큰 러닝커브
-    - 라우팅, 상태관리, 폼 유효성 등 필요한 도구를 모아놓은 All In One 프레임워크
-    - React와 Vue.js와 비교했을 때 가장 배울 것이 많고 어려운
-    - 가볍고 빠르게 작업을 해야하는 프로젝트 보다는 큰 프로젝트에 사용하기 적합
-    - TypeScript를 기반으로 하기 때문에 엄격하지만 그만큼 직관적이고 오류를 줄일 수 있음
-    - 웹사이트가 빠르고 효율적으로 렌더링 되게 설계되어있음
-    - MPA를 구성하기에는 복잡하고, SPA에서는 매우 빠르게 작동한다. 애초에 구글이 SPA를 위해 만든 것이라고 한다.
-    
-    ### Vue
-    
-    - 오픈소스 자바스크립트 프레임워크이며
-    - Google의 전 개발자 Even You 개발, 그를 주축으로 유지보수
-    - Virtual Dom 지원
-    - SSR - [Nuxt.js](https://ko.nuxtjs.org/)
-    - 양방향과 단방향의 바인딩 지원
-    - [TypeScript 지원](https://kr.vuejs.org/v2/guide/typescript.html)
-    - [NativeScript](https://nativescript-vue.org/ko/docs/introduction/)
-    - [Single File Component](https://kr.vuejs.org/v2/guide/single-file-components.html)
-    - 작은 러닝커브(학습 및 적응이 빠름)
-    - React의 장점인 Virtual Dom과 Angular의 양방향 바인딩을 가져옴
-    - 자바스크립트의 기본 스타일을 적극적으로 적용하고 있어서 학습하고 적응하기 쉬움
-    - 그리고 Single File Component는 `.vue` 파일에 HTML과 CSS 그리고 Script까지 하나로 묶어서 컴포넌트 단위로 직관적인 구성이 가능하다는 것
-    - 디자이너나 퍼블리셔와 협업하는 과정에서는 생산성이나 유지보수에 큰 도움이 될 것
-    
-    ## DOM, 가상 DOM
-    
-    ## JSX
-    
-    ## Component
-    
+키워드
+
+`jsx,component, dom, 라이브러리/프레임워크, angular, vue`
+
+## 라이브러리, 프레임워크 차이
+
+### 라이브러리
+
+- 단순 활용이 가능한 도구들의 집합
+- 소프트웨어 개발할 때 컴퓨터 프로그램이 사용하는 비휘발성 자원
+- 미리 작성된 코드, 변수, 함수, 클래스 등 포함
+- 개발자가 필요할 때 호출하여 사용
+
+### 프레임워크
+
+- 뼈대니 기반구조
+- 소프트웨어의 특정 문제를 해결하기 위해서 상호 협력하는 클래스와 인터페이스의 집합
+- 개발을 수월하게 하기 위해 소프트웨어의 구체적인 기능들에 해당하는 부분의 설계와 구현을 재사용 가능하도록 협업화된 형태로 제공하는 소프트웨어 환경
+- 개발 시 필수적인 코드, 알고리즘, 데이터베이스 연동 등과 같은 기능를 위해 어느정도 뼈대 제공
+- 제어의 역전 ( 프레임 워크 위에 개발한 클래스를 등록해두고, 프레임워크가 흐름을 주도하는 중에 개발자가 만든 애플리케이션 코드를 사용하도록 만드는 방식 )
+
+### 라이브러리와 프레임워크 차이
+
+- flow에 대한 제한 권한이 어디에 있느냐의 차이
+- 프레임워크 - 전체적인 흐름을 자체적으로 가지고 있으며, 프로그래머가 그 안에 필요한 코드 작성
+- 라이브러리 - 사용자가 흐름에 대한 제어를 하여 필요한 상황에 가져다 쓰는 것
+
+## react, angular, vue 차이
+
+### React
+
+- 라이브러리
+- 페이스북 개발자가 개발, 페이스북에서 유지 보수
+- [Virtual Dom](https://www.youtube.com/watch?v=BYbgopx44vo) 지원
+- SSR - [Next.js](https://nextjs.org/)
+- [JSX](https://ko.reactjs.org/docs/introducing-jsx.html) (JavaScritp + XML)
+- [React Native](https://reactnative.dev/) (앱 개발까지 가능)
+- 라이브러리이지만 컴포넌트를 사용한다면, 프레임워크처럼 규칙을 지켜야함
+- 장점 - [Virtual Dom](https://ko.reactjs.org/docs/faq-internals.html) ⇒ Dom 트리를 추상화하여 자바스크립트 객체로 만들어 두고 변경되는 부분은 virtual dom에서 처리하여 성능을 높힘
+    - virtual DOM(변경된 부분 처리) ————→ real DOM(virtual DOM에서 받으거랑 비교 했을 때 달라지 부분만 변경, 안달라졌으면 변경 X) / 유튜브보고 정리한거 더 자세히 공부해봐야함
+- SPA(Single Page Application) 방식으로 진행한다면 검색엔진 노출(SEO : Search Engine Optimization)에 관련된 문제를 생각 했을 때 SSR을 염두해 둘 수 밖에 없었는데 Next.js를 사용하여 해결 가능
+- UI를 구성하는 개별적인 뷰 단위인 컴포넌트 단위로 작성하여 생산성과 유지보수에 좋음
+- JSX(자바스크립트 확장 문법)을 사용하여 컴포넌트를 생성 가능
+
+### Angular
+
+- 타입스크립트 기반 오픈소스 프레임워크
+- 구글 앵귤러팀 개발, 구글에서 유지보수
+- 양방향 바인딩 지원
+- TypeScript 기반
+- [RxJs](https://github.com/ReactiveX/rxjs) (Reactive Extensions For JavaScript) : 스트림을 통한 비동기 처리 방식 지원
+- 가장 체계적이고 잘 정리되어있는 문서와 튜토리얼
+- 큰 러닝커브
+- 라우팅, 상태관리, 폼 유효성 등 필요한 도구를 모아놓은 All In One 프레임워크
+- React와 Vue.js와 비교했을 때 가장 배울 것이 많고 어려운
+- 가볍고 빠르게 작업을 해야하는 프로젝트 보다는 큰 프로젝트에 사용하기 적합
+- TypeScript를 기반으로 하기 때문에 엄격하지만 그만큼 직관적이고 오류를 줄일 수 있음
+- 웹사이트가 빠르고 효율적으로 렌더링 되게 설계되어있음
+- MPA를 구성하기에는 복잡하고, SPA에서는 매우 빠르게 작동한다. 애초에 구글이 SPA를 위해 만든 것이라고 한다.
+
+### Vue
+
+- 오픈소스 자바스크립트 프레임워크
+- Google의 전 개발자 Even You 개발, 그를 주축으로 유지보수
+- Virtual Dom 지원
+- SSR - [Nuxt.js](https://ko.nuxtjs.org/)
+- 양방향과 단방향의 바인딩 지원
+- [TypeScript 지원](https://kr.vuejs.org/v2/guide/typescript.html)
+- [NativeScript](https://nativescript-vue.org/ko/docs/introduction/)
+- [Single File Component](https://kr.vuejs.org/v2/guide/single-file-components.html)
+- 작은 러닝커브(학습 및 적응이 빠름)
+- React의 장점인 Virtual Dom과 Angular의 양방향 바인딩을 가져옴
+- 자바스크립트의 기본 스타일을 적극적으로 적용하고 있어서 학습하고 적응하기 쉬움
+- 그리고 Single File Component는 `.vue` 파일에 HTML과 CSS 그리고 Script까지 하나로 묶어서 컴포넌트 단위로 직관적인 구성이 가능하다는 것
+- 디자이너나 퍼블리셔와 협업하는 과정에서는 생산성이나 유지보수에 큰 도움이 될 것
+
+## DOM, 가상 DOM
+
+<aside>
+💡 리액트가 렌더링하는 것 ⇒ 리액트가 특정 시점에 가상 DOM 구조를 물리 DOM 구조로 만드는 것
+
+</aside>
+
+### DOM((Document Object Model)
+
+- Document object - html, head, body와 같은 태그들을 javascript가 이용할 수 있는 (메모리에 보관할 수 있는) 객체
+- 웹 브라우저에서 자바스크립트 코드가 생성하는 실제 DOM 구조 (물리 DOM)
+- 웹 페이지를 이루는 태그들을 자바스크립트가 이용할 수 있게끔 브라우저가 트리구조로 만든 객체 모델
+
+![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled.png)
+
+- DOM은 HTML과 스크립팅언어(Javascript)를 서로 이어주는 역할
+
+### 가상 DOM
+
+- [Virtual Dom](https://www.youtube.com/watch?v=BYbgopx44vo) 설명 영상
+- 리액트 코드가 생성한 자바스크립트 구조
+
+### react 패키지
+
+- App.js 파일을 가상 DOM 구조로 만드는 역할을 하는 패키지
+
+### 스레드
+
+- 운영체제가 제공하는 서비스
+- 자바스크립는 1개의 스레드에서 동작
+- 자바 or 오브젝트-c 같은 언어로 구현된 앱 여러개의 스레드 동시 실행
+- 단일 스레드 / 다중스레드
+
+## JSX
+
+- JavaScript + XML
+- XML(eXtensible Markup Language) : 태그 이름을 자유롭게 지을 수 있음
+- import React from ‘react’ 필요
+- XML 마크업 구조에 중괄호를 사용하여 자바스크립트 코드를 감싸는 형태의 문법
+
+```jsx
+const hello = 'Hello world!'
+<Text>{hello}</Text>
+```
+
+- JSX 구문의 자바스크립트 코드는 반드시 retrun 키워드 업이 값을 반환해야 함
+
+### 바벨
+
+- 특정 버전의 ECMAScript 코드를 하위 버전의 ECMAScript로 변환해주는 트랜스파일러
+- ECMA는 자바스크립트의 표준화를 맡으면서, 자바와 상표권 분쟁을 피하고자 자바스크립트 대신 ECMAScript라는 명칭을 택했다. **[출처]** [미래의 자바스크립트, ESNext](https://blog.naver.com/baosol/221326928597)
+- 바벨은 JSX구문이 이쓴ㄴ ESNext 자바스크립트를 만나면 이 플러그인을 실행해 여러 개의 React.createElement 함수를 호출하는 평범한 자바스크립트로 변환
+
+## Component
+
+- 객체지향 프로그래밍에서는 컴포넌트는 UI를 담당하는 클래스
+
+### 사용자 컴포넌트
+
+- 직접 만드는 컴포넌트, 사용자 정의 컴포넌트 or 사용자 컴포넌트
+- 오랫동안 객체지향 방식인 **클래스 컴포넌트**를 사용했지만 단순히 함수로 구현하는 **함수 컴포넌트** 도입
+- 리액트 팀은 함수컴포넌트와 리액트 훅 사용 장려
+- 리액트 훅은 함수 방식으로 제작된 컴포넌트에서만 사용가능
+
+## 랜더링
 
 # 참고자료
-
----
 
 - 리액트 면접질문
     
@@ -225,4 +281,14 @@ DOM 자체는 빠르지만 요소의 개수가 수 백 개, 수 천 개로 늘�
 - react, angular, vue.js
     
     [https://velog.io/@goblin820/TIL-2-Vue-React-Angular](https://velog.io/@goblin820/TIL-2-Vue-React-Angular)
+    
+- DOM
+    
+    [https://velog.io/@mollog/React에서의-가상돔-개념](https://velog.io/@mollog/React%EC%97%90%EC%84%9C%EC%9D%98-%EA%B0%80%EC%83%81%EB%8F%94-%EA%B0%9C%EB%85%90)
+    
+- 리액트를 사용하는 이유
+    
+    [https://helloworld-88.tistory.com/350](https://helloworld-88.tistory.com/350)
+    
+
     
