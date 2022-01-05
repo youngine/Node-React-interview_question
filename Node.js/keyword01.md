@@ -86,3 +86,60 @@ Node.js는 싱글스레드, 논 블로킹 모델로 싱글 스레드가 혼자�
 ### 참고
 - [Node.js 이해하기- 싱글스레드](https://dip0cean.tistory.com/7?category=915622)
 - [Node.js 이해하기](https://dip0cean.tistory.com/6?category=915622)
+
+<br>
+<br>
+
+# node
+
+## node.js 란
+
+- 크롬 V8 자바스크립트 엔진으로 빌드된 자바스크립트 런타임(프로그램을 실행할 수 있는 환경)
+- 서버사이트 스크립트 언어 X 프로그램(환경)!!
+- 웹서버와 같이 확장성 있는 네트워크 프로그램을 제작하기 위해 만들어짐
+- 이벤트기반, 논블로킹 I/O모델을 사용해 가볍고 효율적
+- 입문자들은 Node.js가 서버프레임워크 혹은 자바스크립트로 서버를 짜기위해 공부해야하는 무언가로 생각할 수 O → But, **자바스크립트라는 컴퓨터 언어로 만든 프로그램을 실행할 수 있게 만들어주는 환경일뿐 (= 자바스크립트 런타임)**
+
+## node.js 특징
+
+### 부제 - node.js 를 서버로 활용하는 이유
+
+1. 이벤트루프를 활용한 논블로킹 I/O
+    
+    **이벤트루프**
+    
+    - **Call Stack이 비어있으면 Callback Queue (Task Queue)에서 함수를 하나씩 가져와 Call Stack에 넣고 실행하는 것**
+    - 루프이기때문에 Task Queue에 함수가 대기를 하던 안하던 확인 후 있다면 Call Stack에 넣고 실행을 반복
+    - 이벤트기반 - 이벤트가 발생할 때 어떤 순서로 작업을 수행할지 이벤트 루프가 판단
+    - 예제 - [http://latentflip.com/loupe](http://latentflip.com/loupe)
+    - Call Stack → 코드가 순차적으로 읽히면서 쌓이게되는 영역
+    - Web Apis(Background) → 콜백 또는 이벤트 리스너들이 Call Stack에서 읽힌 후 대기하는 영역
+    - Callback Queue (Task Queue) → Web Apis(Background)에서 작업이 완료되면 호출되어야할 함수들이 대기하는 영역
+    
+    **논블로킹**
+    
+    - **이전 작업이 완료될때까지 멈춰져있지 않고 다음작업을 실행하는 것**
+    - 비동기?
+2. 싱글스레드
+    - 스레드 → 프로세스 내에서 실행되는 흐름의 단위이며 부모프로세스의 자원을 공유
+    - 프로세스 → 운영체제에서 할당하는 작업의 단위이며 쉽게말해 실행중인 프로그램
+    - 자바스크립트와 Node.js는 싱글스레드
+    - 하나의 작업만 처리할 수 있지만, **이벤트루프를 활용한 논블로킹I/O를 통해 고성능 병렬처리가 가능**
+    - 싱글스레드이므로 시간(연산)이 오래걸리는 작업을 한다면 서버전체의 성능이 저하 (cluster, pm2를 사용하여 멀티프로세싱 혹은 AWS Lambda, Google Cloud Function으로 해소 가능)
+    
+    멀티스레드 단점
+    
+    - 스레드가 증가할수록 비용 증가
+    - 서버자원은 한정적이기 때문에 동시접속자만큼 스레드를 증가시킬 수 없음 (서버를 업그레이드하거나 Load-Balancing으로 해소 가능)
+    - 자원을 공유하기때문에 공유자원 접근 문제가 발생 / thread-unsafe라고 표현하기도 함
+3. 자바스크립트이기 때문에 프론트와 백을 하나의 언어로 개발할 수 O
+
+ 
+
+# 참고자료
+    
+- node.js
+    
+    [https://medium.com/@seungh93/node-js-이해하기-기초-입문-b5af7aed374c](https://medium.com/@seungh93/node-js-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-%EA%B8%B0%EC%B4%88-%EC%9E%85%EB%AC%B8-b5af7aed374c)
+    
+    [https://hanamon.kr/nodejs-개념-이해하기/](https://hanamon.kr/nodejs-%EA%B0%9C%EB%85%90-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/)
