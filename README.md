@@ -38,5 +38,10 @@ jsx,component, dom, 라이브러리/프레임워크, angular, vue
 
 ### 🗝 **[1/4일 STUDY KEYWORD](Node.js/keyword01.md)**
 ```
-npm ,webpack ,Node.js ,스레드, noSQL
+Node.js ,스레드
+```
+
+### 🗝 **[1/5일 STUDY KEYWORD](Node.js/keyword02.md)**
+```
+npm ,webpack , package.json, 클래스형 컴포넌트, 함수형 컴포넌트
 ```
