@@ -46,6 +46,11 @@ Node.js ,스레드
 npm ,webpack , package.json, 클래스형 컴포넌트, 함수형 컴포넌트
 ```
 
+### 🗝 **[1/6일 STUDY KEYWORD](Node.js/keyword02.md)**
+```
+block/nonblock, 동기/비동기, 프로세스/스레드, 총 복습, noSQL
+```
+
 <br>
 <br>
 
