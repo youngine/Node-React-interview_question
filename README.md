@@ -45,3 +45,11 @@ Node.js ,스레드
 ```
 npm ,webpack , package.json, 클래스형 컴포넌트, 함수형 컴포넌트
 ```
+
+<br>
+<br>
+
+### ✅ 참고
+- Tech-Question : https://www.fullstack.cafe/interview-questions/react
+- React-Interview-Question : https://github.com/appear/reactjs-interview-questions-ko
+- Interview_Question : https://github.com/JaeYeopHan/Interview_Question_for_Beginner
