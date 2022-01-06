@@ -177,3 +177,145 @@ var express = require('express');
 - [SPA vs MPA와 SSR vs CSR 장단점 뜻정리](https://hanamon.kr/spa-mpa-ssr-csr-%EC%9E%A5%EB%8B%A8%EC%A0%90-%EB%9C%BB%EC%A0%95%EB%A6%AC/)
 - [함수형 컴포넌트 vs 클래스형 컴포넌트](https://born-dev.tistory.com/27)
 - [React란 무엇인가?](https://shin1303.tistory.com/entry/React-React%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)
+
+<br>
+
+
+## npm
+
+- Node Package Manager
+- 자바스크립트 프로그래밍 언어를 위핸 패키지 관리자
+- 패키지를 관리해주는 도구
+- 자바스크립트 런타임 환경 node.js의 기본 패키지 관리자
+- node.js 에서 사용하는 모듈들을 패키지로 만들어 npm을 통하여 관리하고 배포
+    - 모듈 → 애플리케이션을 구성하는 개별적 요소
+- 다른 사람들이 만들어 놓은 모듈들 npm으로 설치하여 사용
+- 설치한 모듈이 사용하고 있는 다른 모듈의 의존성 또한 자동으로 해결해줌
+- 다른 언어들의 비슷한 개념
+    - ruby의 Gem
+    - php의 Composer
+    - C#의 NuGet
+    - java의 Jpm
+    - python의 pip
+
+### 버전
+
+- [**LTS**(Long Term Supported) 버전] - (프론트엔드 개발 추천)
+    
+    짝수 버전이 LTS 버전(현재 4.X)
+    
+    안정성과 보안성에 초점을 두어 개발
+    
+- [**Stable** 버전] - (서버)
+    
+    Stable 버전은 잦은 업데이트를 진행
+    
+    홀수 버전(현재 6.X)
+    
+
+### 모듈화와 CommonJs
+
+- 자바스크립트는 웹페이지에 있어서 보조적인 기능을 수행하기 위해 한정적인 용도로 만들어진 태생적 한계로 다른 언어에 비해 부족한(나쁜) 부분이 있는 것이 사실이다. 그 대표적인 것이 모듈 기능이 없는 것이다.
+- C언어는 #include, Java는 import 등 대부분의 언어는 모듈 기능을 가지고 있다. 하지만 Client-side JavaScript의 경우, script 태그를 사용하여 외부의 스크립트 파일을 가져올 수는 있지만 파일마다 독립적인 파일 Scope를 갖지 않고 하나의 전역 객체(Global Object)에 바인딩되기 때문에 전역변수가 중복되는 등의 문제가 발생할 수 있다. 이것으로는 모듈화를 구현할 수 없다.
+- JavaScript를 Client-side에 국한하지 않고 범용적으로 사용하고자 하는 움직임이 생기면서 모듈 기능은 반드시 해결해야하는 핵심 과제가 되었고 이런 상황에서 제안된 것이 [CommonJS](http://www.commonjs.org/)와 [AMD(Asynchronous Module Definition)](https://github.com/amdjs/amdjs-api/wiki/AMD)이다.
+- CommonJS과 AMD는 사양(spec)으로 CommonJS 또는 AMD라는 라이브러리가 존재하는 것은 아니다.
+- CommonJS 방식은 AMD에 비해 문법이 간단하며 동기 방식(synchronous loading)으로 동작한다.
+- AMD 방식은 CommonJS에 비해 문법이 다소 까다로우며 CommonJS와는 달리 비동기 방식(asynchronous loading)으로 동작한다. AMD 방식을 지원하는 대표적인 모듈 로더는 [RequireJS](http://requirejs.org/)이다.
+- Node.js는 사실상 모듈 시스템의 사실상 표준(de facto standard)인 CommonJS를 채택하였고 현재는 독자적인 진화를 거쳐 CommonJS 사양과 100% 동일하지는 않지만 기본적으로 CommonJS 방식을 따르고 있다. Node.js에서 모듈의 사용 방법에 대해서는 [Node.js module](https://poiemaweb.com/nodejs-module)을 참고하기 바란다.
+- 브라우저에서의 모듈 사용은 대부분의 브라우저가 ES6의 모듈을 지원하지 않고 있으므로 [Browserify](http://browserify.org/) 또는 [webpack](https://webpack.github.io/)과 같은 모듈 번들러를 사용하여야 한다.
+
+## webpack
+
+- **JavaScript 모듈화 도구**
+- JavaScript는 언어 자체가 지원하는 모듈 시스템이 없습니다. 이런 한계를 극복하려 여러 가지 도구를 활용하는데 그 도구 가운데 하나가 **webpack**
+- [Node.js](https://nodejs.org/)가 설치된 환경에서 실행 가능
+
+![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%202.png)
+
+- webpack을 사용할 때 브라우저에서 실행되는 코드는 실제 작성한 코드가 아니라 webpack으로 컴파일된 코드
+
+### 장점
+
+- 모듈 시스템을 구성하는 기능
+- 로더 사용
+- 빠른 컴파일 속도
+
+### webpack 사용방법
+
+- **엔트리 파일 →** 다음 그림과 같이 서로 의존 관계에 있는 다양한 모듈을 사용하는 시작점이 되는 파일
+- **번들 파일 →** 브라우저에서 실행할 수 있게 모듈을 컴파일한 파일
+
+![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%203.png)
+
+- webpack에서 컴파일은 엔트리 파일을 시작으로 의존 관계에 있는 모듈을 엮어서 하나의 번들 파일을 만드는 작업
+- JavaScript를 사용하는 HTML 코드에서는 컴파일 결과로 만들어진 번들 파일만 포함하면 됨
+
+![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%204.png)
+
+- 엔트리 파일이 여러 개일 때는 엔트리 파일마다 번들 파일이 생성
+
+[https://d2.naver.com/helloworld/0239818](https://d2.naver.com/helloworld/0239818)
+
+## package.json
+
+- 프로젝트의 정보를 정의하고, 의존하는 **패키지 버전 정보**를 명시하는 파일
+- 배포한 모듈 정보를 담고자 만들어짐
+- 노드로 작성하는 애플리케이션도 package.json 파일을 사용하여 관리할 수 있음
+- 사용하는 확장 모듈에 대한 의존성 관리가 가능하기 때문에 편리해짐
+
+### 영역
+
+- 프로젝트의 정보 - name, version 영역
+- 패키지 버전 정보 - **dependencies 또는 devDependencies** 영역
+
+### 패키지 지정
+
+- "dependencies": **프로덕션 환경**에서 응용 프로그램에 필요한 패키지
+- "devDependencies": **로컬 개발 및 테스트**에만 필요한 패키지
+
+### 시멘틱 버저닝 규칙
+
+**틸드(~)**
+
+```json
+"devDependencies": {
+  "@vue/cli-service": "~4.3.0",
+},
+```
+
+- 해당 패키지의 패치 레벨 변경을 허용하겠다는 의미
+- 즉, 4.4.0 미만의 패치 레벨 변경을 허용하겠다는 의미
+
+**캐럿(^)**
+
+```json
+"dependencies": {
+  "vue": "^2.6.11"
+}
+```
+
+- 해당 패캐지의 마이너, 패치 변경을 허용하겠다는 의미
+- 즉, 3.0.0 미만의 마이너, 패치 변경을 허용하겠다는 의미
+
+## 컴포넌트
+
+### 기본구조
+
+![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%205.png)
+
+- 클래스형 컴포넌트 → render 함수를 사용해서 retrun안의 코드를 화면에 보이도록 함
+- 함수형 컴포넌트 → 자신이 렌더 함수이기 때문에 render 함수 사용없이 return 값만 사용
+
+### props 값 전달 받기
+
+- App.js 설정 → App.js 컴포넌트는 함수형 컴포넌트로 구현
+
+![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%206.png)
+
+- 클래스형 컴포넌트 → 클래스형 컴포넌트에서 부모 컴포넌트에서 정의한 props 값을 {this.props.props이름}으로 받아서 씀
+
+![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%207.png)
+
+- 함수형 컴포넌트 → 함수형 컴포넌트에서 정의한 props 값은 함수의 인자값(파라미터)으로 받아옴 즉, 부모 컴포넌트에서 전달받은 props 값을 함수형 컴포넌트의 인자로 설정하여 함수 내부에 props 값을 전달해서 화면에 나타나게 하는 것
+
+![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%208.png)
