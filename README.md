@@ -31,22 +31,22 @@ Node.js를 사용하면 확장 가능한 네트워크 프로그램을 쉽게 구
 ```
 <br>
   
-### 🗝 **[1/3일 STUDY KEYWORD](React/keyword01.md)**
+### 🗝 **[1/3일 STUDY KEYWORD](study/keyword01.md)**
 ```
 jsx,component, dom, 라이브러리/프레임워크, angular, vue
 ```
 
-### 🗝 **[1/4일 STUDY KEYWORD](Node.js/keyword01.md)**
+### 🗝 **[1/4일 STUDY KEYWORD](study/keyword02.md)**
 ```
 Node.js ,스레드
 ```
 
-### 🗝 **[1/5일 STUDY KEYWORD](Node.js/keyword02.md)**
+### 🗝 **[1/5일 STUDY KEYWORD](study/keyword03.md)**
 ```
 npm ,webpack , package.json, 클래스형 컴포넌트, 함수형 컴포넌트
 ```
 
-### 🗝 **[1/6일 STUDY KEYWORD](Node.js/keyword02.md)**
+### 🗝 **[1/6일 STUDY KEYWORD](study/keyword04.md)**
 ```
 block/nonblock, 동기/비동기, 프로세스/스레드, 총 복습, noSQL
 ```

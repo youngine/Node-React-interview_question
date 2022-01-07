@@ -1,8 +1,8 @@
-# Node.js KEYWORD
+# KEYWORD 04
 <br>
 
 
-### 🗝 **[1/6일 STUDY KEYWORD](Node.js/keyword02.md)**
+### 🗝 **[1/6일 STUDY KEYWORD](study/keyword04.md)**
 ```
 block/nonblock, 동기/비동기, 프로세스/스레드, 총 복습, noSQL
 ```

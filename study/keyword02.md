@@ -1,7 +1,7 @@
-# Node.js KEYWORD
+# KEYWORD 02
 <br>
 
-### 🗝 **[1/4일 STUDY KEYWORD](Node.js/keyword01.md)**
+### 🗝 **[1/4일 STUDY KEYWORD](study/keyword02.md)**
 ```
 npm ,webpack ,Node.js ,스레드, noSQL
 ```
