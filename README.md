@@ -51,6 +51,11 @@ npm ,webpack , package.json, 클래스형 컴포넌트, 함수형 컴포넌트
 block/nonblock, 동기/비동기, 프로세스/스레드, 총 복습, noSQL
 ```
 
+### 🗝 **[1/10일 STUDY KEYWORD](study/keyword05.md)**
+```
+면접스크립트 읽기
+```
+
 <br>
 <br>
 
