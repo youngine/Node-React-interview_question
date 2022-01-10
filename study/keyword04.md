@@ -215,7 +215,7 @@ Node.js는 싱글스레드, 논 블로킹 모델로 싱글 스레드가 혼자�
     - Code, Data, Stack, Heap의 구조로 되어 있는 독립된 메모리 영역
 - 특징
     
-    ![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%209.png)
+    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0f915355-0064-40d6-a1c9-b17e211bc9d2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T083122Z&X-Amz-Expires=86400&X-Amz-Signature=6a7fc8e0606935f8ba1a9807b36a27b92a71bff9daca1a8f399d4938428f9042&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
     
     - 프로세스는 각각 독립된 메모리 영역(Code, Data, Stack, Heap의 구조)을 할당받음
     - **기본적으로 프로세스당 최소 1개의 스레드(메인 스레드)를 가지고 있음**
@@ -231,7 +231,7 @@ Node.js는 싱글스레드, 논 블로킹 모델로 싱글 스레드가 혼자�
     - 프로세스가 할당받은 자원을 이용하는 실행의 단위
 - 특징
     
-    ![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%2010.png)
+    ![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/cfab3254-ae0b-4ecd-8991-72848f4d67a6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T083139Z&X-Amz-Expires=86400&X-Amz-Signature=aad366322aaa8e598d22475aaebcb5ec39415d017295cd4fe34e4c39276f2051&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
     
     - 스레드는 프로세스 내에서 각각 Stack만 따로 할당받고 Code, Data, Heap 영역은 공유
     - 스레드는 **한 프로세스 내에서 동작되는 여러 실행의 흐름**으로, 프로세스 내의 주소 공간이나 자원들(힙 공간 등)을 같은 프로세스 내에 스레드끼리 공유하면서 실행
@@ -285,7 +285,7 @@ Node.js는 싱글스레드, 논 블로킹 모델로 싱글 스레드가 혼자�
 - (멀티 프로세스 대신 멀티 스레드를 사용하는 것의 의미)
 - **프로그램을 여러 개 키는 것보다 하나의 프로그램 안에서 여러 작업을 해결하는 것**
 
-![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%2011.png)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2528dd66-4b5b-4c4f-99ec-0ee5796734e2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T083203Z&X-Amz-Expires=86400&X-Amz-Signature=b2e83b9de695533b14939b8852e7633928e636717b5f2efd4f1befd3b7136fed&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 ### 멀티 스레드 장점
 
