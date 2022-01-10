@@ -225,12 +225,12 @@ var express = require('express');
 - 브라우저에서의 모듈 사용은 대부분의 브라우저가 ES6의 모듈을 지원하지 않고 있으므로 [Browserify](http://browserify.org/) 또는 [webpack](https://webpack.github.io/)과 같은 모듈 번들러를 사용하여야 한다.
 
 ## webpack
-
+- **번들러~**
 - **JavaScript 모듈화 도구**
 - JavaScript는 언어 자체가 지원하는 모듈 시스템이 없습니다. 이런 한계를 극복하려 여러 가지 도구를 활용하는데 그 도구 가운데 하나가 **webpack**
 - [Node.js](https://nodejs.org/)가 설치된 환경에서 실행 가능
 
-![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%202.png)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/70d62db6-35aa-498e-a82e-25bb4daed378/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T074255Z&X-Amz-Expires=86400&X-Amz-Signature=4b3943981e535ff90131f6cbd8dca1253dde54204ba4e4aa40496d863afef9cd&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 - webpack을 사용할 때 브라우저에서 실행되는 코드는 실제 작성한 코드가 아니라 webpack으로 컴파일된 코드
 
@@ -245,16 +245,93 @@ var express = require('express');
 - **엔트리 파일 →** 다음 그림과 같이 서로 의존 관계에 있는 다양한 모듈을 사용하는 시작점이 되는 파일
 - **번들 파일 →** 브라우저에서 실행할 수 있게 모듈을 컴파일한 파일
 
-![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%203.png)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f41490b5-cb52-419d-947f-ca947a19e92c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T074404Z&X-Amz-Expires=86400&X-Amz-Signature=353c9eb7ad1325bb3c0d035c5edda5b41fd5ef13bfbeaa3a0d268d54d439183a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 - webpack에서 컴파일은 엔트리 파일을 시작으로 의존 관계에 있는 모듈을 엮어서 하나의 번들 파일을 만드는 작업
 - JavaScript를 사용하는 HTML 코드에서는 컴파일 결과로 만들어진 번들 파일만 포함하면 됨
 
-![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%204.png)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/fe7ed023-e492-4c9f-877a-be274f04c80c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T074419Z&X-Amz-Expires=86400&X-Amz-Signature=cb3afadfd139eff1c7607ed27fae655b1af13bb36c7d2a5934ccd1954525d768&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 - 엔트리 파일이 여러 개일 때는 엔트리 파일마다 번들 파일이 생성
 
 [https://d2.naver.com/helloworld/0239818](https://d2.naver.com/helloworld/0239818)
+
+여담
+
+- 웹을 개발하다보면 다양한 확장자의 파일을 만들게 된다. 이렇게 다양한 소스는 웹 어플리케이션을 무겁게 만든다. 통신이 있을 때마다 이 소스들을 로딩하는 작업은 고비용이다. 많은 JS 패키지를 사용하다보면 예상하지 못한 충돌로 인해 어플리케이션이 깨지게 될 수도 있다(같은 이름을 변수를 사용하는 등). 이를 해결하기 위해 등장한 도구가 Bundler이다. bundle은 묶는다는 뜻이다. **여러개의 파일을 묶어주는 어떠한 정리 방법**이다. 구체적인 기술로는 WebPack, Broserify, Parcel이 있다. WebPack은 가장 인기있는 도구이다. 하나의 JS파일에 .js뿐만 아니라 .css나 image파일 등을 모듈을 모두 몰아넣을 수 있다. 동시에 성능을 향상시키기 위해 필요하다면 다시 분리할 수 있다. 특히, WebPack을 둘러싼 방대한 생태계 덕분에 다양한 확장 기능 등이 있다. 따라서 많은 작업들을 자동화 시킬 수 있다.
+
+### SPA
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/52d72e86-78b8-40ec-add1-edae7209ec18/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T082626Z&X-Amz-Expires=86400&X-Amz-Signature=702a5815794c1120fd504b2bb0da2b5a5311cf8daf3a77776b3dfc458d45d4e6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+- SPA(Single Page Application)는 한 개(Single)의 Page로 구성된 Application
+- 웹 에플리케이션에 필요한 **모든 정적 리소스를 최초 한 번에 다운로드**
+- 그 후에는 데이터를 받아올 때만 서버와 통신
+- 그 이후 새로운 페이지 요청이 있을 때, 페이지 갱신에 **필요한 데이터만 전달 받아서 페이지를 갱신**
+- 필요한 부분만 갱신하기 때문에 네이티브 앱에 가까운 자연스러운 페이지 이동과 사용자 경험(UX)을 제공
+
+⇒ SPA를 **CSR(Client Side Rendering)** 방식으로 렌더링이라 함
+
+### 장점
+
+- 자연스러운 사용자 경험 (UX) → 전체 페이지를 업데이트 할 필요가 없기 때문에 빠르고 ‘깜빡’ 거림이 없음
+- 필요한 리소스만 부분적으로 로딩 (성능) → SPA의 Application은 서버에게 정적리소스를 한 번만 요청 그리고 받은 데이터는 전부 저장**(캐시=Cache)**
+- 서버의 템플릿 연산을 클라이언트로 분산 (성능)
+- 컴포넌트별 개발 용이 (생산성)
+- 모바일 앱 개발을 염두에 둔다면 동일한 API를 사용하도록 설계 가능 (생산성)
+
+### 단점
+
+- JavaScript 파일을 번들링해서 한 번에 받기 때문에 초기 구동 속도가 느림 (Webpack의 code splitting으로 해결 가능)
+- 검색엔진최적화(SEO)가 어려움 (SSR로 해결 가능) → SPA 앱을 검색로봇 입장에서 보면 모든 페이지의 소스가 아래와 같이 보임, 검색엔진이 색인을 할 만한 컨텐츠가 존재하지 않는 것
+    
+    ```html
+    <html>
+    <head>
+      <title>Single Page Application</title>
+      <link rel="stylesheet" href="app.css" type="text/css">
+    </head>
+    <body>
+      <div id="app"></div>
+      <script src="app.js"></script>
+    </body>
+    </html>
+    ```
+    
+
+### **SPA 방식이 모두 CSR인 것은 아님**
+
+### MPA
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/70ca152a-8f1f-4dff-b9f8-e5ed0dab1b2e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T082643Z&X-Amz-Expires=86400&X-Amz-Signature=ac9d74de29283ee4893004ed3134cb922bdd2ff55d12b13d0b7c036c099dc0df&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+- MPA(Multiple Page Application)는 여러 개(Multiple)의 Page로 구성된 Application
+- **새로운 페이지를 요청**할 때마다 **정적 리소스(HTML, CSS, JavaScript)**가 다운로드
+- **매번 전체 페이지가 다시 렌더링**
+
+⇒ MPA를 **SSR(Server Side Rendering)** 방식으로 렌더링이라 함
+
+### 장점
+
+- SEO 관점에서 유리 → MPA는 완성된 형태의 HTML 파일을 서버로부터 전달받음 따라서 검색엔진이 페이지를 크롤링하기에 적합
+- 첫 로딩이 매우 짧음 → 서버에서 이미 렌더링해 가져오기 때문, 그러나 클라이언트가 JS 파일을 모두 다운로드하고 적용하기전 까지는 각각의 기능은 동작하지 않음
+
+### 단점
+
+- 새로운 페이지를 이동하면 ‘깜빡’인다 (UX) → 매 페이지 요청마다 리로딩(새로고침) 발생, 새로운 페이지를 요청할 때마다 전체 페이지를 다시 렌더링하기 때문
+- 페에지 이동시 불필요한 템플릿도 중복해서 로딩 (성능)
+- 서버 렌더링에 따른 부하
+- 모바일 앱 개발시 추가적인 백엔드 작업 필요 (생산성) 개발이 복잡해질 수 있음
+
+### SSR, CSR 차이 → 초기렌더링속도, SEO, 보안
+
+### SSR이 렌더링 하는 방식
+
+- 모든 템플릿은 서버 연산을 통해서 렌더링하고 완성된 페이지 형태로 응답 → 이 과정을 **서버 사이드 렌더링(SSR)**이라고 부름
+
+### CSR이 렌더링하는 방식
+
+- 최초에 한번 서버에서 전체 페이지를 로딩하여 보여주고 이후에는 사용자의 요청이 올 때마다, 리소스를 서버에서 제공한 후 클라이언트가 해석하고 렌더링하는 방식
 
 ## package.json
 
@@ -301,7 +378,7 @@ var express = require('express');
 
 ### 기본구조
 
-![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%205.png)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5c9fd55b-16b0-444b-a9e7-8bc7c264c537/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T074448Z&X-Amz-Expires=86400&X-Amz-Signature=e07ea3936693d45fb53558d0aa23847354b9b947cb53cdc18b0d7a42b3463e7d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 - 클래스형 컴포넌트 → render 함수를 사용해서 retrun안의 코드를 화면에 보이도록 함
 - 함수형 컴포넌트 → 자신이 렌더 함수이기 때문에 render 함수 사용없이 return 값만 사용
@@ -310,12 +387,12 @@ var express = require('express');
 
 - App.js 설정 → App.js 컴포넌트는 함수형 컴포넌트로 구현
 
-![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%206.png)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/130d7713-cc3c-4a8f-b94a-3281b37174bc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T074504Z&X-Amz-Expires=86400&X-Amz-Signature=2f0a59f0aaf79c011f64b912a23e3eed729d4c11c0f615eee3e8b51b367242e6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 - 클래스형 컴포넌트 → 클래스형 컴포넌트에서 부모 컴포넌트에서 정의한 props 값을 {this.props.props이름}으로 받아서 씀
 
-![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%207.png)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/dc9893f0-e9cb-4b3b-89cb-776aba00cd95/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T074522Z&X-Amz-Expires=86400&X-Amz-Signature=afe67925db480ecadf89824647a762a6a60abd28a9d44326e33a44e0934ab62d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 - 함수형 컴포넌트 → 함수형 컴포넌트에서 정의한 props 값은 함수의 인자값(파라미터)으로 받아옴 즉, 부모 컴포넌트에서 전달받은 props 값을 함수형 컴포넌트의 인자로 설정하여 함수 내부에 props 값을 전달해서 화면에 나타나게 하는 것
 
-![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled%208.png)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8deaea4e-b8ce-4cbf-a476-b653fb2b00a6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T074534Z&X-Amz-Expires=86400&X-Amz-Signature=f129b2ec851be614174293ecb8ec5eaeac70e945d860214b1799d825e5ada749&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
