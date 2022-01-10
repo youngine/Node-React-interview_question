@@ -211,7 +211,7 @@ DOM 자체는 빠르지만 요소의 개수가 수 백 개, 수 천 개로 늘�
 - 웹 브라우저에서 자바스크립트 코드가 생성하는 실제 DOM 구조 (물리 DOM)
 - 웹 페이지를 이루는 태그들을 자바스크립트가 이용할 수 있게끔 브라우저가 트리구조로 만든 객체 모델
 
-![Untitled](%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%82%E1%85%A9%E1%84%83%E1%85%B3%204ec481aaf8784ecf8dda9544a4d056bc/Untitled.png)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/58b1c424-0fce-4f7f-bd28-ab9d6049ee59/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220110T064220Z&X-Amz-Expires=86400&X-Amz-Signature=a8046b02b59accc16c634cc4533b17012c9ae48671b7b3e0a3d4cfe3a625c77c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 - DOM은 HTML과 스크립팅언어(Javascript)를 서로 이어주는 역할
 
@@ -236,20 +236,57 @@ DOM 자체는 빠르지만 요소의 개수가 수 백 개, 수 천 개로 늘�
 - JavaScript + XML
 - XML(eXtensible Markup Language) : 태그 이름을 자유롭게 지을 수 있음
 - import React from ‘react’ 필요
-- XML 마크업 구조에 중괄호를 사용하여 자바스크립트 코드를 감싸는 형태의 문법
+- **XML 마크업 구조에 중괄호를 사용하여 자바스크립트 코드를 감싸는 형태의 문법**
 
 ```jsx
 const hello = 'Hello world!'
 <Text>{hello}</Text>
 ```
 
-- JSX 구문의 자바스크립트 코드는 반드시 retrun 키워드 업이 값을 반환해야 함
+- JSX 구문의 자바스크립트 코드는 반드시 retrun 키워드 이 값을 반환해야 함
 
 ### 바벨
 
 - 특정 버전의 ECMAScript 코드를 하위 버전의 ECMAScript로 변환해주는 트랜스파일러
 - ECMA는 자바스크립트의 표준화를 맡으면서, 자바와 상표권 분쟁을 피하고자 자바스크립트 대신 ECMAScript라는 명칭을 택했다. **[출처]** [미래의 자바스크립트, ESNext](https://blog.naver.com/baosol/221326928597)
-- 바벨은 JSX구문이 이쓴ㄴ ESNext 자바스크립트를 만나면 이 플러그인을 실행해 여러 개의 React.createElement 함수를 호출하는 평범한 자바스크립트로 변환
+- 바벨은 JSX구문이  ESNext 자바스크립트를 만나면 이 플러그인을 실행해 여러 개의 React.createElement 함수를 호출하는 평범한 자바스크립트로 변환
+
+### 예시
+
+- Babel은 JSX를 `React.createElement()`호출로 컴파일 함
+- 아래 예시는 동일
+
+```jsx
+const element = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
+```
+
+```jsx
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+```
+
+- `React.createElement()`는 버그가 없는 코드를 작성하는 데 도움이 되도록 몇 가지 검사를 수행하며, 기본적으로 아래와 같은 객체를 생성
+
+```jsx
+// 주의: 다음 구조는 단순화되었습니다
+const element = {
+  type: 'h1',
+  props: {
+    className: 'greeting',
+    children: 'Hello, world!'
+  }
+};
+```
+
+- 위에 객체를 “React 엘리먼트”라고 하며, 화면에서 보고 싶은 것을 나타내는 표현이라 생각하면 됨
+- React는 이 객체를 읽어서, DOM을 구성하고 최신 상태로 유지하는 데 사용
 
 ## Component
 
