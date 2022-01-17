@@ -56,6 +56,11 @@ block/nonblock, 동기/비동기, 프로세스/스레드, 총 복습, noSQL
 면접스크립트 읽기
 ```
 
+### 🗝 **[1/17일 STUDY KEYWORD](study/keyword05.md)**
+```
+EventEmitter, 동기/비동기/블럭/논블럭 api , callback지옥
+```
+
 <br>
 <br>
 
