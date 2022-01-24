@@ -61,6 +61,11 @@ block/nonblock, 동기/비동기, 프로세스/스레드, 총 복습, noSQL
 EventEmitter, 동기/비동기/블럭/논블럭 api , callback지옥
 ```
 
+### 🗝 **[1/24일 STUDY KEYWORD](study/keyword06.md)**
+```
+
+```
+
 <br>
 <br>
 
@@ -68,3 +73,4 @@ EventEmitter, 동기/비동기/블럭/논블럭 api , callback지옥
 - Tech-Question : https://www.fullstack.cafe/interview-questions/react
 - React-Interview-Question : https://github.com/appear/reactjs-interview-questions-ko
 - Interview_Question : https://github.com/JaeYeopHan/Interview_Question_for_Beginner
+- 프로젝트 공통면접 질문:  https://mangkyu.tistory.com/100
