@@ -61,11 +61,6 @@ block/nonblock, 동기/비동기, 프로세스/스레드, 총 복습, noSQL
 EventEmitter, 동기/비동기/블럭/논블럭 api , callback지옥
 ```
 
-### 🗝 **[1/24일 STUDY KEYWORD](study/keyword06.md)**
-```
-
-```
-
 <br>
 <br>
 
